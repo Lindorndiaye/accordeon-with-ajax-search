@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha384-..."
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordéon sportif</title>
+    <style>
+      /* Styles CSS de base */
+      .accordion-button {
+        position: relative; /* Ajout de position relative pour que l'icône soit positionnée par rapport à ce bouton */
+      }
+      .accordion-button:active {
+        color: black !important; /* Couleur du texte en noir lorsque le bouton est actif */
+      }
+
+      .accordion-button i {
+        position: absolute; /* Position absolue pour l'icône */
+        right: 10px; /* Distance depuis le bord droit */
+      }
+      .accordion-button {
+        color: black !important; /* Couleur du texte en noir */
+        font-size: 22px !important;
+        font-weight: 800;
+        font-family: Roboto, sans-serif;
+      }
+      .accordion-button:hover {
+        color: black !important; /* Couleur du texte en noir au survol */
+      }
+      .accordion {
+        width: 60%;
+        margin: 20px auto;
+      }
+
+      .accordion-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Centre le contenu verticalement */
+
+        width: 100%;
+        text-align: left;
+        border: none;
+        background-color: transparent;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 0px;
+        cursor: pointer;
+        font-size: 16px;
+        border-bottom: 1px solid #ccc; /* Ajout de la bordure inférieure */
+      }
+      .button-text {
+        flex-grow: 8; /* Le texte du bouton occupe 80% de l'espace disponible */
+      }
+
+      .accordion-button i {
+        margin-left: 10px; /* Espacement entre le texte et l'icône */
+      }
+
+      .accordion-button:hover,
+      .accordion-button:focus,
+      .accordion-button:active {
+        background-color: transparent;
+        outline: none;
+      }
+
+      .accordion-content {
+        display: none;
+        padding: 10px;
+        font-family: Roboto, sans-serif;
+        font-size: 18px;
+      }
+
+      .accordion-title {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .accordion-child {
+        margin-bottom: 20px;
+      }
+
+      #search-box {
+        background-color: #f4f4f5;
+        border: none;
+        border-radius: 10px;
+        width: 60%;
+        padding: 10px;
+        margin: 20px 0;
+      }
+      .fas {
+        color: #18c5bd;
+      }
+      .titre {
+        margin-top: 50px;
+        font-family: v12;
+        font-size: 30px;
+        color: #18c5bd;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      style="margin-left: 20%; margin-right: 20%"
+      type="text"
+      id="search-box"
+      placeholder="What do you need help with?"
+    />
+
+    <div class="accordion">
+      <div class="accordion-child">
+        <p class="titre">Sport</p>
+        <!-- Thème Football -->
+        <button
+          class="accordion-button"
+          data-content="Le football est un sport d'équipe populaire joué dans le monde entier."
+        >
+          <div class="button-text">Football</div>
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>
+            Le football est un sport d'équipe populaire joué dans le monde
+            entier.
+          </p>
+        </div>
+
+        <!-- Thème Basket-ball -->
+        <button
+          class="accordion-button"
+          data-content="Le basket-ball est un sport de balle où deux équipes s'affrontent pour marquer des paniers."
+        >
+          <div class="button-text">Basket-ball</div>
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>
+            Le basket-ball est un sport de balle où deux équipes s'affrontent
+            pour marquer des paniers.
+          </p>
+        </div>
+
+        <!-- Thème Natation -->
+        <button
+          class="accordion-button"
+          data-content="La natation est un sport aquatique où les nageurs se déplacent dans l'eau en utilisant diverses techniques de natation."
+        >
+          <div class="button-text">Natation</div>
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>
+            La natation est un sport aquatique où les nageurs se déplacent dans
+            l'eau en utilisant diverses techniques de natation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-child">
+        <p class="titre">Langue</p>
+        <!-- Thème Français -->
+        <button
+          class="accordion-button"
+          data-content="Le français est une langue romantique parlée dans de nombreux pays."
+        >
+          <div class="button-text">Francais</div>
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>
+            Le français est une langue romantique parlée dans de nombreux pays.
+          </p>
+        </div>
+
+        <!-- Thème Anglais -->
+        <button
+          class="accordion-button"
+          data-content="L'anglais est une langue internationale largement utilisée dans le monde entier."
+        >
+          <div class="button-text">Anglais</div>
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>
+            L'anglais est une langue internationale largement utilisée dans le
+            monde entier.
+          </p>
+        </div>
+
+        <!-- Thème Espagnol -->
+        <button
+          class="accordion-button"
+          data-content="L'espagnol est une langue principalement parlée en Espagne et en Amérique latine."
+        >
+          <div class="button-text">Espagnol</div>
+
+          <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>
+            L'espagnol est une langue principalement parlée en Espagne et en
+            Amérique latine.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // JavaScript pour ajouter la fonctionnalité d'accordéon
+      const buttons = document.querySelectorAll(".accordion-button");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          const allContents = document.querySelectorAll(".accordion-content");
+          const icons = document.querySelectorAll(".accordion-button i");
+
+          // Fermer tous les autres contenus et réinitialiser les icônes
+          allContents.forEach((c) => {
+            if (c !== content) {
+              c.style.display = "none";
+            }
+          });
+
+          icons.forEach((icon) => {
+            icon.classList.remove("fa-angle-up");
+            icon.classList.add("fa-angle-down");
+          });
+
+          // Toggle le contenu actuel
+          content.style.display =
+            content.style.display === "block" ? "none" : "block";
+
+          // Changer l'icône en fonction de l'état actuel
+          const icon = button.querySelector("i");
+          if (content.style.display === "block") {
+            icon.classList.remove("fa-angle-down");
+            icon.classList.add("fa-angle-up");
+          } else {
+            icon.classList.remove("fa-angle-up");
+            icon.classList.add("fa-angle-down");
+          }
+        });
+      });
+
+      // JavaScript pour la recherche AJAX
+      const searchBox = document.getElementById("search-box");
+      const accordionChildren = document.querySelectorAll(".accordion-child");
+
+      searchBox.addEventListener("input", () => {
+        const searchText = searchBox.value.toLowerCase();
+
+        // Fermer tous les accordéons
+        buttons.forEach((button) => {
+          const content = button.nextElementSibling;
+          content.style.display = "none";
+        });
+
+        accordionChildren.forEach((accordionChild) => {
+          const childButtons =
+            accordionChild.querySelectorAll(".accordion-button");
+          let anyButtonVisible = false;
+
+          childButtons.forEach((button) => {
+            const content = button.getAttribute("data-content").toLowerCase();
+
+            if (content.includes(searchText)) {
+              button.style.display = "block";
+              anyButtonVisible = true;
+            } else {
+              button.style.display = "none";
+            }
+          });
+
+          // Masquer le titre si aucun bouton n'est visible
+          const title = accordionChild.querySelector(".titre");
+          if (anyButtonVisible) {
+            title.style.display = "block";
+          } else {
+            title.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
