@@ -12,6 +12,23 @@
     <title>Accordéon sportif</title>
     <style>
       /* Styles CSS de base */
+      .search-icon {
+        position: absolute;
+        left: 10px; /* Ajustez la distance depuis le bord gauche selon vos préférences */
+        top: 50%;
+        transform: translateY(-50%);
+        color: #18c5bd; /* Couleur de l'icône */
+      }
+      .search-box {
+        position: relative;
+        width: 60%;
+        margin: 20px auto;
+        background-color: #f4f4f5;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+      }
+
       .accordion-button {
         position: relative; /* Ajout de position relative pour que l'icône soit positionnée par rapport à ce bouton */
       }
@@ -20,7 +37,6 @@
       }
 
       .accordion-button i {
-        position: absolute; /* Position absolue pour l'icône */
         right: 10px; /* Distance depuis le bord droit */
       }
       .accordion-button {
@@ -58,9 +74,11 @@
       }
 
       .accordion-button i {
-        margin-left: 10px; /* Espacement entre le texte et l'icône */
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
       }
-
       .accordion-button:hover,
       .accordion-button:focus,
       .accordion-button:active {
@@ -86,13 +104,24 @@
         margin-bottom: 20px;
       }
 
-      #search-box {
+      /* #search-box {
         background-color: #f4f4f5;
         border: none;
         border-radius: 10px;
         width: 60%;
         padding: 10px;
         margin: 20px 0;
+      } */
+      #search-box {
+        background-color: #f4f4f5;
+
+        border: none;
+        background: none;
+        width: 100%;
+        padding-left: 30px; /* Ajustez la marge à gauche pour éviter que le texte ne chevauche l'icône */
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        outline: none;
       }
       .fas {
         color: #18c5bd;
@@ -107,12 +136,14 @@
     </style>
   </head>
   <body>
-    <input
-      style="margin-left: 20%; margin-right: 20%"
-      type="text"
-      id="search-box"
-      placeholder="What do you need help with?"
-    />
+    <div class="search-box">
+      <span class="search-icon"><i class="fas fa-search"></i></span>
+      <input
+        type="text"
+        id="search-box"
+        placeholder="What do you need help with?"
+      />
+    </div>
 
     <div class="accordion">
       <div class="accordion-child">
